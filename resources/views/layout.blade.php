@@ -6,18 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Laravel</title>
 
-
-    <!-- Fonts -->
-    <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-    <!-- Latest compiled and minified CSS -->
-{{--    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">--}}
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
-
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -29,23 +17,23 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Jota.me</a>
+            <a class="navbar-brand" href="#">FIDFUD</a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="/">Home</a></li>
+                <li><a href="{{ route('home') }}">Home</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::guest())
-                <li><a href="{{route('login')}}">Login</a></li>
-                <li><a href="{{route('register')}}">Register</a></li>
+                {{--<li><a href="{{route('login')}}">Login</a></li>
+                <li><a href="{{route('register')}}">Register</a></li>--}}
                 @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ route('logout') }}">Logout</a></li>
+                            {{--<li><a href="{{ route('logout') }}">Logout</a></li>--}}
                         </ul>
                     </li>
                 @endif
@@ -57,10 +45,12 @@
 @yield('content')
 
 <!-- Scripts -->
-{{--<script src="{{asset('js/bootstrap.js')}}"></script>--}}
-{{--<script src="{{asset('jquery/jquery.js')}}"></script>--}}
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+@include('partials.scripts')
 @yield('scripts')
 </body>
 </html>
+<script>
+    $(document).ready(function () {
+        alert('hola');
+    });
+</script>
