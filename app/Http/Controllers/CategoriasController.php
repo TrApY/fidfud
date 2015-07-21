@@ -9,9 +9,20 @@ use App\Http\Controllers\Controller;
 
 class CategoriasController extends Controller
 {
+    /**
+     * @var
+     */
+    private $request;
 
-    protected $categoria;
 
+    /**
+     * CategoriasController constructor.
+     */
+    public function __construct(Request $request)
+    {
+
+        $this->request = $request;
+    }
 
     public function index($id)
     {
@@ -26,7 +37,7 @@ class CategoriasController extends Controller
                 $this->restaurantes();
                 break;
             case 2:
-                $this->productos();
+                $this->recetas();
                 break;
             case 3:
                 $this->noticias();
@@ -39,9 +50,9 @@ class CategoriasController extends Controller
         dd("Restaurantes: ". $this->getCategoria());
     }
 
-    public function productos()
+    public function recetas()
     {
-        dd("Productos: ". $this->getCategoria());
+        dd("Recetas: ". $this->getCategoria());
     }
 
     public function noticias()
@@ -49,22 +60,31 @@ class CategoriasController extends Controller
         dd("Noticias: ". $this->getCategoria());
     }
 
-
-
-
     /**
      * @return mixed
      */
-    public function getCategoria()
+    public function getRequest()
     {
-        return $this->categoria;
+        return $this->request;
     }
 
     /**
-     * @param mixed $categoria
+     * @param mixed $request
      */
-    public function setCategoria($categoria)
+    public function setRequest($request)
     {
-        $this->categoria = $categoria;
+        $this->request = $request;
     }
+
+    public function setCategoria($id)
+    {
+        $this->getRequest()->session()->put('categoria', $id);
+    }
+
+    public function getCategoria()
+    {
+        return $this->getRequest()->session()->get('categoria');
+    }
+
+
 }

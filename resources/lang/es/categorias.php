@@ -9,7 +9,7 @@
 
 return [
 
-    'productos' => 'Productos',
+    'recetas' => 'Recetas',
     'restaurantes' => 'Restaurantes',
     'noticias' => 'Noticias',
 
