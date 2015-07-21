@@ -52,15 +52,14 @@
     </div>
 
     <script>
-        $('#lactosa').click(function () {
-            window.location.href = '{{route('hola')}}';
+        $('#diabetes').click(function () {
+            window.location.href = '{{route('diabetes')}}';
         });
         $('#celiaquia').click(function () {
-            window.location.href = '{{route('hola')}}';
+            window.location.href = '{{route('celiaquia')}}';
         });
-        $('#diabetes').click(function () {
-            window.location.href = '{{route('hola')}}';
+        $('#lactosa').click(function () {
+            window.location.href = '{{route('lactosa')}}';
         });
-
     </script>
 @endsection
