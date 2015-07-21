@@ -23,7 +23,12 @@ Route::get('hola', [
     'as'   => 'hola'
 ]);
 
-Route::get('diabetes', [
+Route::get('categorias/{id}', [
+    'uses' => 'CategoriasController@index',
+    'as'   => 'categorias'
+]);
+
+/*Route::get('diabetes', [
     'uses' => 'DiabetesController@index',
     'as'   => 'diabetes'
 ]);
@@ -34,7 +39,7 @@ Route::get('celiaquia', [
 Route::get('lactosa', [
     'uses' => 'IntLactosaController@index',
     'as'   => 'lactosa'
-]);
+]);*/
 
 
 /*Route::controllers([

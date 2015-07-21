@@ -53,13 +53,13 @@
 
     <script>
         $('#diabetes').click(function () {
-            window.location.href = '{{route('diabetes')}}';
+            window.location.href = '{{url('categorias/1')}}';
         });
         $('#celiaquia').click(function () {
-            window.location.href = '{{route('celiaquia')}}';
+            window.location.href = '{{url('categorias/2')}}';
         });
         $('#lactosa').click(function () {
-            window.location.href = '{{route('lactosa')}}';
+            window.location.href = '{{url('categorias/3')}}';
         });
     </script>
 @endsection
