@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Laravel</title>
-
+    @include('partials.scripts')
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -22,13 +22,13 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="{{ route('home') }}">Home</a></li>
+                <li><a href="{{ route('home') }}">{{ trans('layout.home') }}</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::guest())
-                {{--<li><a href="{{route('login')}}">Login</a></li>
-                <li><a href="{{route('register')}}">Register</a></li>--}}
+                    {{--<li><a href="--}}{{--{{route('login')}}--}}{{--">Login</a></li>--}}
+                    {{--<li><a href="--}}{{--{{route('register')}}--}}{{--">Register</a></li>--}}
                 @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
@@ -43,14 +43,9 @@
 </nav>
 
 @yield('content')
-
 <!-- Scripts -->
-@include('partials.scripts')
+
 @yield('scripts')
+@include('footer')
 </body>
 </html>
-<script>
-    $(document).ready(function () {
-        alert('hola');
-    });
-</script>

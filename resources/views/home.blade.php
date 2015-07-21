@@ -4,14 +4,63 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Home</div>
-                    <div class="panel-body">
-                        @include('partials/success')
-                        <p>Welcome to our site!</p>
+                <div class="jumbotron text-center">
+                    <h2>
+                        fidfud!
+                    </h2>
+                    <p>
+                        Desde fidfud® te invitamos a pensar en <br>
+                        positivo, en un nuevo estilo de vida, desde la <br>
+                        libertad y con el aval de los mejores expertos y<br>
+                        profesionales.
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <button type="button" id="diabetes" class="btn btn-lg btn-info btn-block">
+                                    Diabetes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <button type="button" id="celiaquia" class="btn btn-block btn-info btn-lg">
+                                    Celiaquía
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <button type="submit" id="lactosa" class="btn btn-block btn-lg btn-info">
+                                    Intolerancia a la Lactosa
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        $('#lactosa').click(function () {
+            window.location.href = '{{route('hola')}}';
+        });
+        $('#celiaquia').click(function () {
+            window.location.href = '{{route('hola')}}';
+        });
+        $('#diabetes').click(function () {
+            window.location.href = '{{route('hola')}}';
+        });
+
+    </script>
 @endsection
