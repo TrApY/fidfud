@@ -15,10 +15,42 @@ class CategoriasController extends Controller
 
     public function index($id)
     {
-        dd($id);
         $this->setCategoria($id);
-        dd($this->getCategoria());
+        return view('categorias');
     }
+
+    public function opciones($opcion)
+    {
+        switch ($opcion) {
+            case 1:
+                $this->restaurantes();
+                break;
+            case 2:
+                $this->productos();
+                break;
+            case 3:
+                $this->noticias();
+                break;
+        }
+    }
+
+    public function restaurantes()
+    {
+        dd("Restaurantes: ". $this->getCategoria());
+    }
+
+    public function productos()
+    {
+        dd("Productos: ". $this->getCategoria());
+    }
+
+    public function noticias()
+    {
+        dd("Noticias: ". $this->getCategoria());
+    }
+
+
+
 
     /**
      * @return mixed

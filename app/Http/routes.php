@@ -11,7 +11,8 @@
 |
 */
 
-
+Route::pattern('id', '[1-3]');
+Route::pattern('opcion', '[1-3]');
 
 Route::get('/', [
     'uses' => 'HomeController@index',
@@ -27,6 +28,8 @@ Route::get('categorias/{id}', [
     'uses' => 'CategoriasController@index',
     'as'   => 'categorias'
 ]);
+
+Route::get('categorias/opcion/{opcion}', 'CategoriasController@opciones');
 
 /*Route::get('diabetes', [
     'uses' => 'DiabetesController@index',
