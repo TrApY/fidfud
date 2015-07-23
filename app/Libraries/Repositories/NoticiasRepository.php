@@ -1,5 +1,6 @@
 <?php namespace App\Libraries\Repositories;
 
+use App\Http\Controllers\HelperController;
 use App\Models\Noticias;
 use Bosnadev\Repositories\Eloquent\Repository;
 use Schema;
@@ -15,6 +16,15 @@ class NoticiasRepository extends Repository
     public function model()
     {
       return 'App\Models\Noticias';
+    }
+
+    public function searchByCategoria()
+    {
+        $categoria = HelperController::getColumn();
+
+        $query = Noticias::where($categoria, '=', 1);
+
+        return $query;
     }
 
 	public function search($input)

@@ -35,7 +35,7 @@ class RestaurantesController extends Controller
 	 */
 	public function index()
 	{
-		$restaurantes = $this->restaurantesRepository->paginate(10);
+        $restaurantes = $this->restaurantesRepository->searchByCategoria()->paginate(10);
 
 		return view('restaurantes.index')
 			->with('restaurantes', $restaurantes);

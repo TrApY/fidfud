@@ -34,7 +34,7 @@ class NoticiasController extends Controller
      */
     public function index()
     {
-        $noticias = $this->noticiasRepository->paginate(10);
+        $noticias = $this->noticiasRepository->searchByCategoria()->paginate(10);
 
         return view('noticias.index')
             ->with('noticias', $noticias);

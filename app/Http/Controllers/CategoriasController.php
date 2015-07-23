@@ -81,7 +81,7 @@ class CategoriasController extends Controller
 			return view('layout.show');
 		}
 
-		session()->put('categoría', $categorias->id);
+		session()->put('categoria', $categorias->id);
 		session()->put('cabecera', $categorias->nombre);
 
 

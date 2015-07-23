@@ -36,12 +36,10 @@ class RecetasController extends Controller
 	public function index()
 	{
 
-		$recetas = $this->recetasRepository->paginate(10);
-//		$recetas = $this->recetasRepository->findWhere(['diabetes' => 1, 'celiaquia' => 1]);
-//        dd($recetas);
+		$recetas = $this->recetasRepository->searchByCategoria()->paginate(10);
+
 		return view('recetas.index')
-			->with('recetas', $recetas)
-            /*->with('recetasFiltrada', $recetasFiltrada)*/;
+			->with('recetas', $recetas);
 	}
 
 	/**

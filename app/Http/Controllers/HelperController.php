@@ -20,4 +20,17 @@ class HelperController extends Controller
         }
         return $data;
     }
+
+    public static function getColumn ()
+    {
+        $categorias = [
+
+            '1'  => 'diabetes',
+            '2'  => 'celiaquia',
+            '3'  => 'lactosa',
+        ];
+
+        return $categorias[session()->get('categoria')];
+
+    }
 }

@@ -1,5 +1,6 @@
 <?php namespace App\Libraries\Repositories;
 
+use App\Http\Controllers\HelperController;
 use App\Models\Restaurantes;
 use Bosnadev\Repositories\Eloquent\Repository;
 use Schema;
@@ -16,6 +17,16 @@ class RestaurantesRepository extends Repository
     {
       return 'App\Models\Restaurantes';
     }
+
+    public function searchByCategoria()
+    {
+        $categoria = HelperController::getColumn();
+
+        $query = Restaurantes::where($categoria, '=', 1);
+
+        return $query;
+    }
+
 
 	public function search($input)
     {
