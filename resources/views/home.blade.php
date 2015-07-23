@@ -53,6 +53,7 @@
 
     <script>
         $('#diabetes').click(function () {
+            {{--window.location.href = '{{url('categorias/1')}}';--}}
             window.location.href = '{{url('categorias/1')}}';
         });
         $('#celiaquia').click(function () {

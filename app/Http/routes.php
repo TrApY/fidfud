@@ -11,8 +11,9 @@
 |
 */
 
-Route::pattern('id', '[1-3]');
-Route::pattern('opcion', '[1-3]');
+//Route::pattern('id', '[1-3]');
+//Route::pattern('opcion', '[1-3]');
+
 
 Route::get('/', [
     'uses' => 'HomeController@index',
@@ -24,41 +25,17 @@ Route::get('hola', [
     'as'   => 'hola'
 ]);
 
-Route::get('categorias/{id}', [
-    'uses' => 'CategoriasController@index',
-    'as'   => 'categorias'
-]);
 
-Route::get('categorias/opcion/{opcion}', 'CategoriasController@opciones');
+//Route::get('categoria/{id}', [
+//    'uses' => 'CategoriasController@index',
+//    'as'   => 'categorias'
+//]);
 
-/*Route::get('diabetes', [
-    'uses' => 'DiabetesController@index',
-    'as'   => 'diabetes'
-]);
-Route::get('celiaquia', [
-    'uses' => 'CeliaquiaController@index',
-    'as'   => 'celiaquia'
-]);
-Route::get('lactosa', [
-    'uses' => 'IntLactosaController@index',
-    'as'   => 'lactosa'
-]);*/
-
-
-/*Route::controllers([
-    'diabetes' => 'DiabetesController'
-]);*/
-
-
-
+//Route::get('categoria/opcion/{opcion}', 'CategoriasController@opciones');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'namespace' => 'Admin'], function () {
 
 });
-
-
-
-
 
 /*// Authentication routes...
 Route::get('login', [
@@ -90,3 +67,40 @@ Route::post('password/email', 'Auth\PasswordController@postEmail');
 // Password reset routes...
 Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 Route::post('password/reset', 'Auth\PasswordController@postReset');*/
+
+/*
+|--------------------------------------------------------------------------
+| API routes
+|--------------------------------------------------------------------------
+*/
+
+Route::resource('restaurantes', 'RestaurantesController');
+
+/*Route::get('restaurantes/{id}/delete', [
+    'as' => 'restaurantes.delete',
+    'uses' => 'RestaurantesController@destroy',
+]);*/
+
+
+Route::resource('recetas', 'RecetasController');
+
+/*Route::get('recetas/{id}/delete', [
+    'as' => 'recetas.delete',
+    'uses' => 'RecetasController@destroy',
+]);*/
+
+
+Route::resource('noticias', 'NoticiasController');
+
+/*Route::get('noticias/{id}/delete', [
+    'as' => 'noticias.delete',
+    'uses' => 'NoticiasController@destroy',
+]);*/
+
+
+Route::resource('categorias', 'CategoriasController');
+
+/*Route::get('categorias/{id}/delete', [
+    'as' => 'categorias.delete',
+    'uses' => 'CategoriasController@destroy',
+]);*/

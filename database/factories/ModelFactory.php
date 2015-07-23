@@ -21,66 +21,52 @@ $factory->define(App\User::class, function ($faker) {
     ];
 });
 
-$factory->define(App\Categoria::class, function ($faker) {
+$factory->define(App\Models\Categorias::class, function ($faker) {
     return [
         'nombre' => $faker->name,
-        'grupo' => $faker->randomElement([1, 2, 3]),
+        'id' => $faker->randomElement([1, 2, 3]),
     ];
 });
 
-$factory->define(App\Restaurante::class, function ($faker) {
+$factory->define(App\Models\Restaurantes::class, function ($faker) {
     return [
         'nombre' => $faker->name,
         'tipo_cocina' => $faker->randomElement(['Española', 'Americana', 'Mexicana']),
         'direccion' => $faker->streetAddress,
         'telefono' => $faker->phoneNumber,
-        'imagen' => $faker->numerify('img.###'),
-        'ruta_imagen' => '/img',
+        'imagen' => "restaurantes/img.jpg",
+        'diabetes' => $faker->randomElement([1, 0,]),
+        'celiaquia' => $faker->randomElement([1, 0,]),
+        'lactosa' => $faker->randomElement([1, 0,]),
 
     ];
 });
 
-$factory->define(App\CatRestaurante::class, function ($faker) {
-    return [
-        'categorias_id' => $faker->randomElement([1, 2, 3]),
-        'restaurantes_id' => $faker->unique()->numberBetween(1, 50),
-    ];
-});
 
-$factory->define(App\Receta::class, function ($faker) {
+$factory->define(App\Models\Recetas::class, function ($faker) {
     return [
         'nombre' => $faker->name,
         'elaboracion' => $faker->paragraph(3),
         'ingredientes' => $faker->word,
-        'tiempo_elaboracion' => $faker->time('1:00:00'),
+        'tiempo_elaboracion' => '1:00:00',
         'url_video' => $faker->imageUrl(),
-        'imagen' => $faker->numerify('img.###'),
-        'ruta_imagen' => '/img',
+        'imagen' => "recetas/img.jpg",
+        'diabetes' => $faker->randomElement([1, 0,]),
+        'celiaquia' => $faker->randomElement([1, 0,]),
+        'lactosa' => $faker->randomElement([1, 0,]),
 
     ];
 });
 
-$factory->define(App\CatReceta::class, function ($faker) {
-    return [
-        'categorias_id' => $faker->randomElement([1, 2, 3]),
-        'recetas_id' => $faker->unique()->numberBetween(1, 50),
-    ];
-});
-
-$factory->define(App\Noticia::class, function ($faker) {
+$factory->define(App\Models\Noticias::class, function ($faker) {
     return [
         'titulo' => $faker->name,
         'noticia' => $faker->paragraph(3),
         'url_video' => $faker->imageUrl,
-        'imagen' => $faker->numerify('img.###'),
-        'ruta_imagen' => '/img',
+        'imagen' => "noticias/img.jpg",
+        'diabetes' => $faker->randomElement([1, 0,]),
+        'celiaquia' => $faker->randomElement([1, 0,]),
+        'lactosa' => $faker->randomElement([1, 0,]),
 
-    ];
-});
-
-$factory->define(App\CatNoticia::class, function ($faker) {
-    return [
-        'categorias_id' => $faker->randomElement([1, 2, 3]),
-        'noticias_id' => $faker->unique()->numberBetween(1, 50),
     ];
 });

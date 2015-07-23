@@ -147,6 +147,13 @@ return [
         /**Provider Collective*/
         Collective\Html\HtmlServiceProvider::class,
 
+        /**Provider por form generator*/
+        Laracasts\Flash\FlashServiceProvider::class,
+        Mitul\Generator\GeneratorServiceProvider::class,
+
+        /**Provider para Debugbar*/
+        Barryvdh\Debugbar\ServiceProvider::class,
+
     ],
 
     /*
@@ -196,8 +203,14 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
 
         /**Aliases Collective*/
-        'Form' => Collective\Html\FormFacade::class,
-        'Html' => Collective\Html\HtmlFacade::class,
+        'Form'      => Collective\Html\FormFacade::class,
+        'Html'      => Collective\Html\HtmlFacade::class,
+
+        /**Aliases Multi generator*/
+        'Flash'     => Laracasts\Flash\Flash::class,
+
+        /**Alias para Debugbar*/
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 

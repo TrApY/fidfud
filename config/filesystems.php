@@ -48,6 +48,21 @@ return [
             'root'   => storage_path('app'),
         ],
 
+        'recetas' => [
+            'driver' => 'local',
+            'root'   => public_path('imagenes/recetas'),
+        ],
+
+        'noticias' => [
+            'driver' => 'local',
+            'root'   => public_path('imagenes/noticias'),
+        ],
+
+        'restaurantes' => [
+            'driver' => 'local',
+            'root'   => public_path('imagenes/restaurantes'),
+        ],
+
         'ftp' => [
             'driver'   => 'ftp',
             'host'     => 'ftp.example.com',

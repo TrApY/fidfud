@@ -11,6 +11,6 @@ class RecetasTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Receta::class, 50)->create();
+        factory(App\Models\Recetas::class, 50)->create();
     }
 }

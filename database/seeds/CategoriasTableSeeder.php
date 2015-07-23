@@ -11,17 +11,17 @@ class CategoriasTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Categoria::class)->create([
+        factory(App\Models\Categorias::class)->create([
             'nombre' => 'Diabetes',
-            'grupo' => 1,
+            'id' => 1,
         ]);
-        factory(App\Categoria::class)->create([
+        factory(App\Models\Categorias::class)->create([
             'nombre' => 'Celiaquía',
-            'grupo' => 2,
+            'id' => 2,
         ]);
-        factory(App\Categoria::class)->create([
+        factory(App\Models\Categorias::class)->create([
             'nombre' => 'Intolerancia Lactosa',
-            'grupo' => 3,
+            'id' => 3,
         ]);
 
     }

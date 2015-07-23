@@ -7,11 +7,11 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Nuevo Usuario</div>
 
-                    @include('admin.users.partials.messages')
+                    @include('users.partials.messages')
 
                     <div class="panel-body">
                         {!! Form::open(['route' => 'admin.users.store', 'method' => 'POST']) !!}
-                        @include('admin.users.partials.fields')
+                        @include('users.partials.fields')
                         {!! Form::submit('Añadir Usuario', ['class' => 'btn btn-default']) !!}
                         {!! Form::close() !!}
                     </div>
