@@ -1,54 +1,33 @@
-<!-- Nombre Field -->
-<div class="form-group">
-    {!! Form::label('nombre', 'Nombre:') !!}
-    <p>{!! $recetas->nombre !!}</p>
-</div>
+<div class="row">
+    <div class="container-fluid">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><h1>Receta {{ $recetas->nombre }}</h1></div>
+                    <div class="panel-body">
 
-<!-- Elaboracion Field -->
-<div class="form-group">
-    {!! Form::label('elaboracion', 'Elaboracion:') !!}
-    <p>{!! $recetas->elaboracion !!}</p>
-</div>
+                        <!-- Imagen Field -->
+                        <div class="form-group">
+                            @if(\Storage::disk('restaurantes')->exists($recetas->imagen))
+                                <img class="thumbnail img-responsive" src="{{asset(session()->get('ruta').$recetas->imagen)}}">
+                            @endif
+                        </div>
 
-<!-- Ingredientes Field -->
-<div class="form-group">
-    {!! Form::label('ingredientes', 'Ingredientes:') !!}
-    <p>{!! $recetas->ingredientes !!}</p>
-</div>
+                        <!-- Descripción receta-->
+                        <div class="form-group">
+                            <h3>{{ $recetas->descripcion }}</h3>
+                        </div>
 
-<!-- Tiempo Elaboracion Field -->
-<div class="form-group">
-    {!! Form::label('tiempo_elaboracion', 'Tiempo Elaboracion:') !!}
-    <p>{!! $recetas->tiempo_elaboracion !!}</p>
-</div>
+                        <!-- Elaboración receta -->
+                        <div class="form-group">
+                            {!! Form::label('elaboracion', 'Elaboración receta:') !!}
+                            <p> {!! $recetas->elaboracion  !!}</p>
+                        </div>
 
-<!-- Url Video Field -->
-<div class="form-group">
-    {!! Form::label('url_video', 'Url Video:') !!}
-    <p>{!! $recetas->url_video !!}</p>
-</div>
-
-<!-- Imagen Field -->
-<div class="form-group">
-    {!! Form::label('imagen', 'Imagen:') !!}
-    <p>{!! $recetas->imagen !!}</p>
-</div>
-
-<!-- Diabetes Field -->
-<div class="form-group">
-    {!! Form::label('diabetes', 'Diabetes:') !!}
-    <p>{!! $recetas->diabetes !!}</p>
-</div>
-
-<!-- Celiaquia Field -->
-<div class="form-group">
-    {!! Form::label('celiaquia', 'Celiaquia:') !!}
-    <p>{!! $recetas->celiaquia !!}</p>
-</div>
-
-<!-- Lactosa Field -->
-<div class="form-group">
-    {!! Form::label('lactosa', 'Lactosa:') !!}
-    <p>{!! $recetas->lactosa !!}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 

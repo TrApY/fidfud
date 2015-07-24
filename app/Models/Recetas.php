@@ -10,10 +10,8 @@ class Recetas extends Model
 
 	public $fillable = [
 	    "nombre",
+	    "descripcion",
 		"elaboracion",
-		"ingredientes",
-		"tiempo_elaboracion",
-		"url_video",
 		"imagen",
 		"diabetes",
 		"celiaquia",
@@ -28,14 +26,13 @@ class Recetas extends Model
     protected $casts = [
         "nombre" => "string",
 		"elaboracion" => "string",
-		"ingredientes" => "string",
-		"tiempo_elaboracion" => "string",
-		"url_video" => "string",
 		"imagen" => "string"
     ];
 
 	public static $rules = [
-	    "nombre" => "required"
+		"nombre" => "required",
+		"descripcion" => "required",
+
 	];
 
 	public function setImagenAttribute($value)
