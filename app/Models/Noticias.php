@@ -15,7 +15,8 @@ class Noticias extends Model
 		"imagen",
 		"diabetes",
 		"celiaquia",
-		"lactosa"
+		"lactosa",
+		"descripcion"
 	];
 
     /**

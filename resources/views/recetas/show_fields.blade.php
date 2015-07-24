@@ -23,7 +23,6 @@
                             {!! Form::label('elaboracion', 'Elaboración receta:') !!}
                             <p> {!! $recetas->elaboracion  !!}</p>
                         </div>
-
                     </div>
                 </div>
             </div>
