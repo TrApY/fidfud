@@ -67,4 +67,3 @@
 		</div>
 	</div>
 </div>
-<script src="{{ asset('/vendors/ckeditor/ckeditor.js') }}"></script>

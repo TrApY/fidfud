@@ -13,10 +13,10 @@
  * (1) http://ckeditor.com/builder
  *     Visit online builder to build CKEditor from scratch.
  *
- * (2) http://ckeditor.com/builder/12ac304493161da11d83337fafba76e7
+ * (2) http://ckeditor.com/builder/d6e8c14da5be5dd900c11b8b1da7cb9e
  *     Visit online builder to build CKEditor, starting with the same setup as before.
  *
- * (3) http://ckeditor.com/builder/download/12ac304493161da11d83337fafba76e7
+ * (3) http://ckeditor.com/builder/download/d6e8c14da5be5dd900c11b8b1da7cb9e
  *     Straight download link to the latest version of CKEditor (Optimized) with the same setup as before.
  *
  * NOTE:
@@ -52,13 +52,9 @@ var CKBUILDER_CONFIG = {
 	plugins : {
 		'a11yhelp' : 1,
 		'about' : 1,
-		'autocorrect' : 1,
-		'autoembed' : 1,
-		'autosave' : 1,
 		'basicstyles' : 1,
 		'bidi' : 1,
 		'blockquote' : 1,
-		'bootstrapVisibility' : 1,
 		'clipboard' : 1,
 		'colorbutton' : 1,
 		'colordialog' : 1,
@@ -66,6 +62,7 @@ var CKBUILDER_CONFIG = {
 		'dialogadvtab' : 1,
 		'div' : 1,
 		'elementspath' : 1,
+		'embed' : 1,
 		'enterkey' : 1,
 		'entities' : 1,
 		'filebrowser' : 1,
@@ -75,6 +72,7 @@ var CKBUILDER_CONFIG = {
 		'font' : 1,
 		'format' : 1,
 		'forms' : 1,
+		'gg' : 1,
 		'horizontalrule' : 1,
 		'htmlwriter' : 1,
 		'iframe' : 1,
@@ -109,11 +107,9 @@ var CKBUILDER_CONFIG = {
 		'table' : 1,
 		'tabletools' : 1,
 		'templates' : 1,
-		'tliyoutube' : 1,
 		'toolbar' : 1,
 		'tweetabletext' : 1,
 		'undo' : 1,
-		'videodetector' : 1,
 		'wsc' : 1,
 		'wysiwygarea' : 1
 	},

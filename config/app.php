@@ -154,6 +154,9 @@ return [
         /**Provider para Debugbar*/
         Barryvdh\Debugbar\ServiceProvider::class,
 
+        /**Provider Intervention Image*/
+        Intervention\Image\ImageServiceProvider::class,
+
     ],
 
     /*
@@ -211,6 +214,9 @@ return [
 
         /**Alias para Debugbar*/
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+
+        /**Intervention image*/
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 

@@ -1,48 +1,44 @@
-<!-- Nombre Field -->
-<div class="form-group">
-    {!! Form::label('nombre', 'Nombre:') !!}
-    <p>{!! $restaurantes->nombre !!}</p>
-</div>
+<div class="row">
+    <div class="container-fluid">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Datos Restaurante {{ $restaurantes->nombre }}</div>
+                    <div class="panel-body">
 
-<!-- Tipo Cocina Field -->
-<div class="form-group">
-    {!! Form::label('tipo_cocina', 'Tipo Cocina:') !!}
-    <p>{!! $restaurantes->tipo_cocina !!}</p>
-</div>
+                        <!-- Imagen Field -->
+                        <div class="form-group">
+                            @if(\Storage::disk('restaurantes')->exists($restaurantes->imagen))
+                                <img class="thumbnail img-responsive" src="{{asset(session()->get('ruta').$restaurantes->imagen)}}">
+                            @endif
+                        </div>
 
-<!-- Direccion Field -->
-<div class="form-group">
-    {!! Form::label('direccion', 'Direccion:') !!}
-    <p>{!! $restaurantes->direccion !!}</p>
-</div>
+                        <!-- Tipo Cocina Field -->
+                        <div class="form-group">
+                            {!! Form::label('tipo_cocina', 'Tipo Cocina:') !!}
+                            <p>{{ $restaurantes->tipo_cocina }}</p>
+                        </div>
 
-<!-- Telefono Field -->
-<div class="form-group">
-    {!! Form::label('telefono', 'Telefono:') !!}
-    <p>{!! $restaurantes->telefono !!}</p>
-</div>
+                        <!-- Direccion Field -->
+                        <div class="form-group">
+                            {!! Form::label('direccion', 'Direccion:') !!}
+                            <p>{{ $restaurantes->direccion }}</p>
+                        </div>
 
-<!-- Imagen Field -->
-<div class="form-group">
-    {!! Form::label('imagen', 'Imagen:') !!}
-    <p>{!! $restaurantes->imagen !!}</p>
-</div>
+                        <!-- Telefono Field -->
+                        <div class="form-group">
+                            {!! Form::label('telefono', 'Telefono:') !!}
+                            <p>{{ $restaurantes->telefono }}</p>
+                        </div>
 
-<!-- Diabetes Field -->
-<div class="form-group">
-    {!! Form::label('diabetes', 'Diabetes:') !!}
-    <p>{!! $restaurantes->diabetes !!}</p>
+                        <!-- Información Field -->
+                        <div class="form-group">
+                            {!! Form::label('informacion', 'Información:') !!}
+                            <p>{!! $restaurantes->informacion !!}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-<!-- Celiaquia Field -->
-<div class="form-group">
-    {!! Form::label('celiaquia', 'Celiaquia:') !!}
-    <p>{!! $restaurantes->celiaquia !!}</p>
-</div>
-
-<!-- Lactosa Field -->
-<div class="form-group">
-    {!! Form::label('lactosa', 'Lactosa:') !!}
-    <p>{!! $restaurantes->lactosa !!}</p>
-</div>
-

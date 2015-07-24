@@ -16,7 +16,8 @@ class Restaurantes extends Model
 		"imagen",
 		"diabetes",
 		"celiaquia",
-		"lactosa"
+		"lactosa",
+		"informacion"
 	];
 
     /**

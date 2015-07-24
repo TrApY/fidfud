@@ -10,6 +10,7 @@ use File;
 use Flash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Input;
 use Response;
 
 //use Mitul\Controller\AppBaseController as Controller;
@@ -92,7 +93,7 @@ class RestaurantesController extends Controller
 	public function show($id)
 	{
 		$restaurantes = $this->restaurantesRepository->find($id);
-
+//        dd($restaurantes);
 		if(empty($restaurantes))
 		{
 			Flash::error('Restaurantes not found');
