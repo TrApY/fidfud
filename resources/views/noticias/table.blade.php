@@ -16,7 +16,7 @@
         <tr data-id="{{ $noticia->id }}">
             <td>{{ $noticia->id }}</td>
             <td>{{ $noticia->titulo }}</td>
-			<td>{{ $noticia->noticia }}</td>
+			<td><p>{!! $noticia->noticia  !!} </p></td>
             <td>{!! $noticia->url_video !!}</td>
             @if(\Storage::disk('noticias')->exists($noticia->imagen))
                 <td><img class="thumbnail" src="{{asset(session()->get('ruta').$noticia->imagen)}}"></td>

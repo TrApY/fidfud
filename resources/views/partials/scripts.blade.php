@@ -21,4 +21,6 @@
     {!! Html::script('assets/css/styles/alert-bangtidy.css') !!}
     {!! Html::script('assets/css/styles/alert-blackgloss.css') !!}
 
+    <script src="{{ asset('/vendors/ckeditor/ckeditor.js') }}"></script>
+
 
