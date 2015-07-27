@@ -26,13 +26,6 @@ Route::get('hola', [
 ]);
 
 
-//Route::get('categoria/{id}', [
-//    'uses' => 'CategoriasController@index',
-//    'as'   => 'categorias'
-//]);
-
-//Route::get('categoria/opcion/{opcion}', 'CategoriasController@opciones');
-
 Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'namespace' => 'Admin'], function () {
 
 });
@@ -76,31 +69,12 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');*/
 
 Route::resource('restaurantes', 'RestaurantesController');
 
-/*Route::get('restaurantes/{id}/delete', [
-    'as' => 'restaurantes.delete',
-    'uses' => 'RestaurantesController@destroy',
-]);*/
-
 
 Route::resource('recetas', 'RecetasController');
-
-/*Route::get('recetas/{id}/delete', [
-    'as' => 'recetas.delete',
-    'uses' => 'RecetasController@destroy',
-]);*/
 
 
 Route::resource('noticias', 'NoticiasController');
 
-/*Route::get('noticias/{id}/delete', [
-    'as' => 'noticias.delete',
-    'uses' => 'NoticiasController@destroy',
-]);*/
-
 
 Route::resource('categorias', 'CategoriasController');
 
-/*Route::get('categorias/{id}/delete', [
-    'as' => 'categorias.delete',
-    'uses' => 'CategoriasController@destroy',
-]);*/
