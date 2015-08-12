@@ -9,7 +9,7 @@
 			{{--<th>Diabetes</th>--}}
 			{{--<th>Celiaquia</th>--}}
 			{{--<th>Lactosa</th>--}}
-            <th></th>
+    <th width="80px"></th>
     </thead>
     <tbody>
     @foreach($restaurantes as $restaurante)
@@ -29,9 +29,9 @@
 {{--			<td>{{ $restaurante->celiaquia }}</td>--}}
 			{{--<td>{{ $restaurante->lactosa }}</td>--}}
             <td>
-                <a href="{{ route('restaurantes.show', $restaurante->id) }}"><i class="glyphicon glyphicon-eye-open"></i></a>
-                {{--<a href="{{ route('restaurantes.edit', $restaurante->id) }}"><i class="glyphicon glyphicon-edit"></i></a>
-                <a href="#!" class="btn-delete"><i class="glyphicon glyphicon-remove"></i></a>--}}
+                <a href="{{ route('admin.restaurantes.show', $restaurante->id) }}"><i class="glyphicon glyphicon-eye-open"></i></a>
+                <a href="{{ route('admin.restaurantes.edit', $restaurante->id) }}"><i class="glyphicon glyphicon-edit"></i></a>
+                <a href="#!" class="btn-delete"><i class="glyphicon glyphicon-remove"></i></a>
             </td>
         </tr>
     @endforeach

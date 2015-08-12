@@ -1,4 +1,4 @@
-@extends('app')
+@extends('admin.adminPanel')
 
 @section('menu')
     @include('partials.menu')

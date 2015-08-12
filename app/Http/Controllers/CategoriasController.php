@@ -72,7 +72,9 @@ class CategoriasController extends Controller
 	public function show($id)
 	{
 
-		$categorias = $this->categoriasRepository->find($id);
+//		dd('hola');
+
+		$categorias = $this->categoriasRepository->findBy('nombre', $id);
 
 		if(empty($categorias))
 		{

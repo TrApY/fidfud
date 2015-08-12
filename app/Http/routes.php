@@ -25,12 +25,13 @@ Route::get('hola', [
     'as'   => 'hola'
 ]);
 
+/*
+|--------------------------------------------------------------------------
+| routes login && reset
+|--------------------------------------------------------------------------
+*/
 
-Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'namespace' => 'Admin'], function () {
-
-});
-
-/*// Authentication routes...
+// Authentication routes...
 Route::get('login', [
     'uses' => 'Auth\AuthController@getLogin',
     'as'   => 'login'
@@ -59,11 +60,11 @@ Route::post('password/email', 'Auth\PasswordController@postEmail');
 
 // Password reset routes...
 Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
-Route::post('password/reset', 'Auth\PasswordController@postReset');*/
+Route::post('password/reset', 'Auth\PasswordController@postReset');
 
 /*
 |--------------------------------------------------------------------------
-| API routes
+| routes controllers
 |--------------------------------------------------------------------------
 */
 
@@ -78,3 +79,16 @@ Route::resource('noticias', 'NoticiasController');
 
 Route::resource('categorias', 'CategoriasController');
 
+
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'is_admin'], 'namespace' => 'Admin'], function () {
+
+    Route::get('adminPanel', [
+        'uses' => 'AdminController@index',
+        'as' => 'admin'
+    ]);
+
+    Route::resource('restaurantes', 'RestaurantesController');
+
+    Route::resource('recetas', 'RecetasController');
+
+});

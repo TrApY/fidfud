@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('app')
 
 @section('content')
     <div class="container-fluid">
@@ -20,7 +20,7 @@
                         <div class="row">
                             <div class="col-md-12">
 
-                                <button type="button" id="diabetes" class="btn btn-lg btn-info btn-block">
+                                <button type="button" id="diabetes" class="btn btn-lg btn-info btn-block categoria">
                                     Diabetes
                                 </button>
                             </div>
@@ -30,7 +30,7 @@
                         <div class="row">
                             <div class="col-md-12">
 
-                                <button type="button" id="celiaquia" class="btn btn-block btn-info btn-lg">
+                                <button type="button" id="celiaquia" class="btn btn-block btn-info btn-lg categoria">
                                     Celiaquía
                                 </button>
                             </div>
@@ -40,7 +40,7 @@
                         <div class="row">
                             <div class="col-md-12">
 
-                                <button type="submit" id="lactosa" class="btn btn-block btn-lg btn-info">
+                                <button type="submit" id="intolerancia lactosa" class="btn btn-block btn-lg btn-info categoria">
                                     Intolerancia a la Lactosa
                                 </button>
                             </div>
@@ -52,15 +52,16 @@
     </div>
 
     <script>
-        $('#diabetes').click(function () {
+        $('.categoria').click(function () {
             {{--window.location.href = '{{url('categorias/1')}}';--}}
-            window.location.href = '{{url('categorias/1')}}';
+            $url = 'categorias/'+ $(this).attr('id');
+            window.location.href = $url;
         });
-        $('#celiaquia').click(function () {
+        /*$('#celiaquia').click(function () {
             window.location.href = '{{url('categorias/2')}}';
         });
         $('#lactosa').click(function () {
             window.location.href = '{{url('categorias/3')}}';
-        });
+        });*/
     </script>
 @endsection

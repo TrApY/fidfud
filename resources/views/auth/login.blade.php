@@ -7,8 +7,8 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Login</div>
                     <div class="panel-body">
-                        @include('partials/errors')
-                        @include('partials/success')
+                        @include('common.errors')
+                        @include('partials.success')
                         <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
@@ -42,7 +42,7 @@
                                         Login
                                     </button>
 
-                                    <a href="/password/email">{{ trans('passwords.forgot') }}</a>
+                                    <a href="{{url('/password/email')}}">{{ trans('passwords.forgot') }}</a>
                                 </div>
                             </div>
                         </form>

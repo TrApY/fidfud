@@ -5,25 +5,23 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 
-class Authenticate
+class IsAdmin
 {
     /**
-     * The Guard implementation.
-     *
      * @var Guard
      */
-    protected $auth;
+    private $auth;
 
     /**
-     * Create a new filter instance.
-     *
-     * @param  Guard  $auth
-     * @return void
+     * IsAdmin constructor.
+     * @param Guard $auth
      */
     public function __construct(Guard $auth)
     {
+
         $this->auth = $auth;
     }
+
 
     /**
      * Handle an incoming request.
@@ -34,11 +32,17 @@ class Authenticate
      */
     public function handle($request, Closure $next)
     {
-        if ($this->auth->guest()) {
+        if (!$this->auth->user()->isAdmin()) {
+            $this->auth->logout();
+            $message = 'Usuario no autorizado';
+
             if ($request->ajax()) {
-                return response('Unauthorized.', 401);
+                return response('Unauthorized.', 401)->json([
+                    'message' => $message
+                ]);
             } else {
-                return redirect()->guest('login');
+                \Session::flash('message', $message);
+                return redirect()->to('login');
             }
         }
 

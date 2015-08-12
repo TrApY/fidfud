@@ -1,8 +1,8 @@
-@extends('app')
+@extends('admin.adminPanel')
 
-@section('menu')
+{{--@section('menu')
     @include('partials.menu')
-@endsection
+@endsection--}}
 
 @section('content')
 
@@ -14,15 +14,15 @@
         {{--@endif--}}
         <div class="row">
             <h1 class="pull-left">Restaurantes</h1>
-            {{--<a class="btn btn-primary pull-right" style="margin-top: 25px" href="{!! route('restaurantes.create') !!}">Add New</a>--}}
+            <a class="btn btn-primary pull-right" style="margin-top: 25px" href="{!! route('admin.restaurantes.create') !!}">Add New</a>
         </div>
 
         <div class="row">
             <div class='notifications bottom-right'></div>
             @if($restaurantes->isEmpty())
-                <div class="well text-center">No hay ningún restaurante.</div>
+                <div class="well text-center">No Restaurantes found.</div>
             @else
-                @include('restaurantes.table')
+                @include('admin.restaurantes.table')
                 @include('common.paginate', ['records' => $restaurantes])
             @endif
         </div>
@@ -30,9 +30,9 @@
         {{--@include('common.paginate', ['records' => $restaurantes])--}}
     </div>
 
-    {{--{!! Form::open(['route' => ['restaurantes.destroy', ':USER_ID'], 'method' => 'DELETE', 'id' => 'form-delete']) !!}
+    {!! Form::open(['route' => ['admin.restaurantes.destroy', ':USER_ID'], 'method' => 'DELETE', 'id' => 'form-delete']) !!}
 
     {!! Form::close() !!}
 
-    @include('partials.deleteAjax')--}}
+    @include('partials.deleteAjax')
 @endsection

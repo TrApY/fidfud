@@ -27,6 +27,13 @@ class RestaurantesRepository extends Repository
         return $query;
     }
 
+    public function todosOrdenados()
+    {
+        $query = Restaurantes::orderBy('nombre', 'ASC')->paginate(10);
+
+        return $query;
+    }
+
 
 	public function search($input)
     {
