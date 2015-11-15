@@ -14,9 +14,9 @@ class Restaurantes extends Model
 		"direccion",
 		"telefono",
 		"imagen",
-		"diabetes",
-		"celiaquia",
-		"lactosa",
+//		"diabetes",
+//		"celiaquia",
+//		"lactosa",
 		"informacion"
 	];
 
@@ -44,6 +44,11 @@ class Restaurantes extends Model
         if (! empty ($value)) {
             $this->attributes['imagen'] = $value;
         }
+    }
+
+    /**Relación uno a muchos para categorías y restaurantes*/
+    public function categorias() {
+        return $this->belongsToMany('\App\Models\Categorias', 'restaurante_categoria');
     }
 
 }

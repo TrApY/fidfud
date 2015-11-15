@@ -43,4 +43,9 @@ class Recetas extends Model
 		}
 	}
 
+	/**Relación uno a muchos para categorías y recetas*/
+	public function categorias() {
+		return $this->belongsToMany('\App\Models\Categorias', 'receta_categoria');
+	}
+
 }

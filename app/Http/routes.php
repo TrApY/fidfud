@@ -14,6 +14,9 @@
 //Route::pattern('id', '[1-3]');
 //Route::pattern('opcion', '[1-3]');
 
+Route::get('home', function() {
+    return view('welcome');
+});
 
 Route::get('/', [
     'uses' => 'HomeController@index',

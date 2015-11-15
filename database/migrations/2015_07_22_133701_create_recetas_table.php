@@ -18,13 +18,11 @@ class CreateRecetasTable extends Migration
 			$table->increments('id');
 			$table->string('nombre')->required();
 			$table->text('elaboracion')->nullable();
-			$table->text('ingredientes')->nullable();
-			$table->string('tiempo_elaboracion')->nullable();
-			$table->string('url_video')->nullable();
 			$table->string('imagen')->nullable();
-			$table->boolean('diabetes');
+			$table->text('descripcion')->nullable();
+			/*$table->boolean('diabetes');
 			$table->boolean('celiaquia');
-			$table->boolean('lactosa');
+			$table->boolean('lactosa');*/
 			$table->timestamps();
 		});
 	}

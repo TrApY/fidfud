@@ -13,9 +13,9 @@ class Noticias extends Model
 		"noticia",
 		"url_video",
 		"imagen",
-		"diabetes",
-		"celiaquia",
-		"lactosa",
+//		"diabetes",
+//		"celiaquia",
+//		"lactosa",
 		"descripcion"
 	];
 
@@ -42,6 +42,11 @@ class Noticias extends Model
 		if (! empty ($value)) {
 			$this->attributes['imagen'] = $value;
 		}
+	}
+
+	/**Relación uno a muchos para categorías y noticias*/
+	public function categorias() {
+		return $this->belongsToMany('\App\Models\Categorias', 'noticia_categoria');
 	}
 
 }

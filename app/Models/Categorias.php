@@ -25,4 +25,16 @@ class Categorias extends Model
 	    "nombre" => "required|unique:categorias,nombre"
 	];
 
+	public function restaurantes() {
+		return $this->belongsToMany('\App\Models\Restaurantes', 'restaurante_categoria');
+	}
+
+    public function noticias() {
+        return $this->belongsToMany('\App\Models\Noticias', 'noticia_categoria');
+    }
+
+    public function recetas() {
+        return $this->belongsToMany('\App\Models\Recetas', 'receta_categoria');
+    }
+
 }

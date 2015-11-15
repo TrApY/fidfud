@@ -18,11 +18,10 @@ class CreateNoticiasTable extends Migration
 			$table->increments('id');
 			$table->string('titulo')->required();
 			$table->text('noticia')->required();
-			$table->string('url_video')->nullable();
-			$table->string('imagen')->nullable();
-			$table->boolean('diabetes');
+			$table->text('descripcion')->nullable();
+			/*$table->boolean('diabetes');
 			$table->boolean('celiaquia');
-			$table->boolean('lactosa');
+			$table->boolean('lactosa');*/
 			$table->timestamps();
 		});
 	}
